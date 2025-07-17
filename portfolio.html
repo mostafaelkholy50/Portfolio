@@ -15,142 +15,186 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: Kelly
-  * Template URL: https://bootstrapmade.com/kelly-free-bootstrap-cv-resume-html-template/
-  * Updated: Aug 07 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <style>
+    /* Custom card styling */
+    .portfolio-card {
+      border: none;
+      border-radius: 0.75rem;
+      overflow: hidden;
+      box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    .portfolio-card:hover {
+      transform: translateY(-5px);
+    }
+    .portfolio-card img {
+      object-fit: cover;
+      height: 180px;
+      width: 100%;
+    }
+    .portfolio-card .card-body {
+      padding: 1rem;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    /* Button styling */
+    .portfolio-card .btn {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 12px 40px;
+  border-radius: 50px;
+  transition: 0.5s;
+  margin-top: 30px;
+    }
+    .btn-primary {
+      background-color: #34b7a7 !important;
+      border-color: #34b7a7 !important;
+    }
+    .btn-primary:hover {
+      background-color: #2ca690 !important;
+      border-color: #2ca690 !important;
+    }
+    .btn-outline-primary {
+      color: #34b7a7 !important;
+      border-color: #34b7a7 !important;
+    }
+    .btn-outline-primary:hover {
+      background-color: #34b7a7 !important;
+      color: #fff !important;
+    }
+  </style>
+
 </head>
 
 <body class="portfolio-page">
 
   <header id="header" class="header d-flex align-items-center light-background sticky-top">
-    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
-
-      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
-        <!-- Uncomment the line below if you also wish to use an image logo -->
-        <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="sitename">Mostafa</h1>
+    <div class="container-fluid d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <h1 class="sitename m-0">Mostafa</h1>
       </a>
-
       <nav id="navmenu" class="navmenu">
-        <ul>
-          <li><a href="index.html" >Home</a></li>
+        <ul class="d-flex gap-4 m-0 p-0 list-unstyled">
+          <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="resume.html">Resume</a></li>
           <li><a href="services.html">Services</a></li>
-          <li><a href="portfolio.html"class="active">Portfolio</a></li>
+          <li><a href="portfolio.html" class="active">Portfolio</a></li>
         </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        <i class="mobile-nav-toggle bi bi-list d-xl-none"></i>
       </nav>
-
-      <div class="header-social-links">
-        <a href="https://www.facebook.com/mostafaelkhol" class="facebook"><i class="bi bi-facebook"></i></a>
-        <a href="https://www.instagram.com/mostafa_ahmad_elkholy/" class="instagram"><i class="bi bi-instagram"></i></a>
-        <a href="https://www.linkedin.com/in/mostafa-elkholy-4333b3262/" class="linkedin"><i class="bi bi-linkedin"></i></a>
+      <div class="header-social-links d-flex gap-3">
+        <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+        <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
       </div>
-
     </div>
   </header>
 
   <main class="main">
 
-<!-- Portfolio Section -->
-<section id="portfolio" class="portfolio section">
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio section py-5">
+      <div class="container section-title text-center" data-aos="fade-up">
+        <h2>Portfolio</h2>
+        <p>A selection of Laravel-based projects showcasing my backend skills.</p>
+      </div>
 
-  <!-- Section Title -->
-  <div class="container section-title" data-aos="fade-up">
-    <h2>Portfolio</h2>
-    <p>A selection of real Laravel-based web projects I developed, showcasing my backend skills and problem-solving approach.</p>
-  </div><!-- End Section Title -->
+      <div class="container">
+        <div class="row gy-4" data-aos="fade-up" data-aos-delay="200">
 
-  <div class="container">
-
-    <div class="isotope-layout" data-default-filter="*" data-layout="masonry" data-sort="original-order">
-
-      <div class="row gy-4 isotope-container" data-aos="fade-up" data-aos-delay="200">
-
-        <!-- Portfolio Item 1 -->
-        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
-          <img src="assets/img/masonry-portfolio/Screenshot (35).png" class="img-fluid" alt="Labsni E-commerce Platform">
-          <div class="portfolio-info">
-            <h4>Labsni E-commerce Platform</h4>
-            <p>Laravel-powered online store with Stripe integration and COD support.</p>
-            <a href="assets/img/masonry-portfolio/Screenshot (35).png" title="Labsni E-commerce Platform" data-gallery="portfolio-gallery-app" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-            <a href="portfolio-details (2).html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+          <!-- Card 1 -->
+          <div class="col-lg-4 col-md-6 d-flex">
+            <div class="card portfolio-card w-100">
+              <img src="assets/img/masonry-portfolio/Screenshot (35).png" class="card-img-top" alt="Labsni E-commerce Platform">
+              <div class="card-body text-center">
+                <div>
+                  <h5 class="card-title">Labsni E-commerce Platform</h5>
+                  <p class="card-text">Online store with Stripe integration and COD support.</p>
+                </div>
+                <div class="d-flex justify-content-center gap-2 mt-3">
+                  <a href="assets/img/masonry-portfolio/Screenshot (35).png" class="btn btn-outline-primary glightbox" title="Preview"><i class="bi bi-zoom-in"></i> Preview</a>
+                  <a href="portfolio-details (2).html" class="btn btn-primary"><i class="bi bi-link-45deg"></i> Details</a>
+                </div>
+              </div>
+            </div>
           </div>
-        </div><!-- End Portfolio Item -->
 
-        <!-- Portfolio Item 2 -->
-        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product">
-          <img src="assets/img/masonry-portfolio/Screenshot (36).png" class="img-fluid" alt="Medical Web Application">
-          <div class="portfolio-info">
-            <h4>Medical Web Application</h4>
-            <p>Appointment booking, live chat, and hospital directory system.</p>
-            <a href="assets/img/masonry-portfolio/Screenshot (36).png" title="Medical Web Application" data-gallery="portfolio-gallery-product" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-            <a href="portfolio-details (1).html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+          <!-- Card 2 -->
+          <div class="col-lg-4 col-md-6 d-flex">
+            <div class="card portfolio-card w-100">
+              <img src="assets/img/masonry-portfolio/Screenshot (36).png" class="card-img-top" alt="Medical Web Application">
+              <div class="card-body text-center">
+                <div>
+                  <h5 class="card-title">Medical Web Application</h5>
+                  <p class="card-text">Appointment booking, live chat, and hospital directory.</p>
+                </div>
+                <div class="d-flex justify-content-center gap-2 mt-3">
+                  <a href="assets/img/masonry-portfolio/Screenshot (36).png" class="btn btn-outline-primary glightbox" title="Preview"><i class="bi bi-zoom-in"></i> Preview</a>
+                  <a href="portfolio-details (1).html" class="btn btn-primary"><i class="bi bi-link-45deg"></i> Details</a>
+                </div>
+              </div>
+            </div>
           </div>
-        </div><!-- End Portfolio Item -->
 
-        <!-- Portfolio Item 3 -->
-        <div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding">
-          <img src="assets/img/masonry-portfolio/Screenshot (38).png" class="img-fluid" alt="University Management System">
-          <div class="portfolio-info">
-            <h4>University Management System – RESTful API</h4>
-            <p>Backend API with authentication, roles, and course management.</p>
-            <a href="assets/img/masonry-portfolio/Screenshot (38).png" title="University Management System" data-gallery="portfolio-gallery-branding" class="glightbox preview-link"><i class="bi bi-zoom-in"></i></a>
-            <a href="portfolio-details.html" title="More Details" class="details-link"><i class="bi bi-link-45deg"></i></a>
+          <!-- Card 3 -->
+          <div class="col-lg-4 col-md-6 d-flex">
+            <div class="card portfolio-card w-100">
+              <img src="assets/img/masonry-portfolio/Screenshot (38).png" class="card-img-top" alt="University Management System">
+              <div class="card-body text-center">
+                <div>
+                  <h5 class="card-title">University Management API</h5>
+                  <p class="card-text">RESTful API with auth, roles, and course.</p>
+                </div>
+                <div class="d-flex justify-content-center gap-2 mt-3">
+                  <a href="assets/img/masonry-portfolio/Screenshot (38).png" class="btn btn-outline-primary glightbox" title="Preview"><i class="bi bi-zoom-in"></i> Preview</a>
+                  <a href="portfolio-details.html" class="btn btn-primary"><i class="bi bi-link-45deg"></i> Details</a>
+                </div>
+              </div>
+            </div>
           </div>
-        </div><!-- End Portfolio Item -->
 
-      </div><!-- End Portfolio Container -->
-
-    </div>
-
-  </div>
-
-</section><!-- /Portfolio Section -->
-
+        </div>
+      </div>
+    </section>
 
   </main>
 
-  <footer id="footer" class="footer light-background">
-
+  <footer id="footer" class="footer light-background py-3 text-center">
+    <div class="container">
+      <p class="mb-0">&copy; 2025 Mostafa. All Rights Reserved.</p>
+    </div>
   </footer>
-
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Preloader -->
-  <div id="preloader"></div>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true });
+    new Isotope('.row', { itemSelector: '.col-lg-4', layoutMode: 'masonry' });
+    GLightbox({ selector: '.glightbox' });
+  </script>
 
 </body>
 
