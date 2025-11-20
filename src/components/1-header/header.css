@@ -1,0 +1,143 @@
+/* ========================
+    1. Sticky Header
+=========================== */
+header.flex.sticky-header {
+  justify-content: space-between;
+  padding: 0 2.4rem;
+  margin-top: 1.2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: var(--bgHeader);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: all 0.3s ease;
+  padding: 0.9rem 1.9rem;
+  margin-top: 0;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* ========================
+    2. Nav Styling
+=========================== */
+header nav {
+  background-color: var(--bgHeader);
+  padding: 0.77rem 1.6rem;
+  border-radius: 55px;
+  box-shadow: 1px 1px 40px #2323242a;
+}
+
+header ul.flex {
+  gap: 16px;
+}
+
+header ul li a {
+  color: var(--title);
+  opacity: 0.9;
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+header ul li a:hover {
+  color: var(--blue);
+  opacity: 1;
+  font-size: 0.9rem;
+}
+
+/* ========================
+    3. Buttons & Icons
+=========================== */
+header .icon-menu,
+header button.mode {
+  background-color: var(--bgHeader);
+  height: 2.4rem;
+  width: 2.4rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--subtitle);
+  border: 1px solid rgba(244, 165, 96, 0.249);
+  transition: all 0.3s ease;
+  box-shadow: 1px 1px 40px rgba(35, 35, 36, 0.165);
+}
+
+header .icon-sun { color: rgb(255, 165, 0); }
+
+header .icon-menu:hover,
+header button.mode:hover {
+  color: var(--title);
+  border: 1px solid rgb(244, 165, 96);
+  transform: scale(1.1);
+}
+
+header .icon-close {
+  font-size: 1.5rem;
+  color: var(--subtitle);
+  transition: all 0.4s ease;
+}
+
+header .icon-close:hover {
+  font-size: 1.7rem;
+  color: crimson;
+  transform: rotate(180deg);
+}
+
+header button.menu { display: none; }
+
+/* ========================
+    4. Mobile Modal
+=========================== */
+header .fixed {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background-color: rgba(40, 40, 48, 0.95);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header .fixed ul.modal {
+  width: 75%;
+  max-width: 400px;
+  margin: 0 auto;
+  border-radius: 1rem;
+  padding: 2rem;
+  background-color: var(--secondary);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  opacity: 0; /* Motion One will animate this */
+}
+
+header .fixed ul.modal li {
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 0;
+  text-align: center;
+}
+
+header .fixed ul.modal li:first-child {
+  text-align: right;
+  border: none;
+  padding: 0 0 1.5rem 0;
+  margin: 0;
+}
+
+header .fixed ul.modal li:last-child { border: none; }
+
+header .fixed ul.modal li a {
+  font-size: 1.1rem;
+  color: var(--title);
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (width < 700px) {
+  header.flex.sticky-header {
+    padding: 1rem 1.5rem;
+  }
+  header nav { display: none; }
+  header button.menu { display: flex; }
+}

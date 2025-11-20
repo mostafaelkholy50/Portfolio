@@ -1,0 +1,113 @@
+.contact-us {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    min-height: 80vh;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* --- GRID LAYOUT --- */
+.contact-main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr; 
+    gap: 4rem;
+    align-items: center; 
+}
+
+/* --- LOTTIE ANIMATION (LEFT) --- */
+.contact-animation-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    opacity: 0; 
+}
+
+/* --- CONTACT INFO COLUMN (RIGHT) --- */
+.contact-info-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    width: 100%;
+}
+
+.contact-info-card {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    border-radius: 12px;
+    background: var(--card-bg); 
+    border: 1px solid var(--border-color);
+    text-decoration: none;
+    transition: transform 0.3s ease-out, box-shadow 0.3s, border-color 0.3s;
+    position: relative; /* For the arrow icon */
+}
+
+.contact-info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(93, 188, 252, 0.2);
+    border-color: var(--blue); /* Highlight border on hover */
+}
+
+.info-icon {
+    font-size: 2.2rem; /* Larger icon size */
+    color: var(--blue);
+    min-width: 40px; 
+    text-align: center;
+}
+
+.info-details {
+    flex-grow: 1;
+}
+
+.info-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--title-color);
+    margin: 0 0 0.2rem 0;
+}
+
+.info-text.details {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--blue);
+    margin: 0 0 0.5rem 0;
+}
+
+.info-text.description {
+    font-size: 0.85rem;
+    color: var(--subtitle-color);
+    margin: 0;
+}
+
+.contact-arrow {
+    font-size: 1.2rem;
+    color: var(--subtitle-color);
+    margin-left: auto;
+    transition: transform 0.3s;
+}
+
+.contact-info-card:hover .contact-arrow {
+    transform: translateX(5px);
+    color: var(--blue);
+}
+
+/* --- RESPONSIVENESS --- */
+@media (max-width: 992px) {
+    .contact-main-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    /* Move Lottie animation to the top on mobile */
+    .contact-animation-container {
+        order: 1; 
+        max-height: 250px;
+    }
+    .contact-info-column {
+        order: 2;
+    }
+}

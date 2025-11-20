@@ -1,0 +1,120 @@
+/* src/components/2-hero/hero.css */
+section.hero {
+  margin-top: 3rem;
+  align-items: center;
+  /* Flexbox for the new structure (avatar on left, text on right) */
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+/* Avatar Section - Left Column */
+.avatar-section {
+  /* Fixed width for avatar column on large screens */
+  flex-shrink: 0;
+}
+
+.parent-avatar.flex {
+  align-items: flex-end;
+  gap: 0.6rem;
+  /* Reset min-height since the original was based on an inner element */
+  min-height: unset;
+}
+
+.avatar {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 2px solid darkorange;
+  padding: 2px;
+  box-shadow: 0 4px 20px rgba(255, 165, 60, 0.3);
+  object-fit: cover;
+  opacity: 0; /* Motion One will animate */
+}
+
+/* Info Section - Right Column */
+.info-section {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+h1.title {
+  font-size: 2.85rem;
+  line-height: 1.2;
+  margin: 0;
+  color: var(--title);
+  opacity: 0;
+}
+
+.sub-title {
+  color: var(--subtitle);
+  font-size: 1rem;
+  line-height: 1.7;
+  max-width: 600px;
+  opacity: 0;
+}
+
+/* Social Icons */
+.all-icons {
+  font-size: 1.6rem;
+  gap: 1.8rem;
+  opacity: 0;
+}
+
+.all-icons a {
+  color: var(--subtitle);
+  transition: all 0.3s ease;
+  display: flex;
+}
+
+.all-icons a:hover {
+  color: var(--blue, #5dbcff);
+  transform: translateY(-4px) scale(1.1);
+}
+
+/* Icon font setup (Font Awesome 6 Brands) */
+.all-icons .icon::before {
+  font-family: "Font Awesome 6 Brands";
+  font-weight: 400;
+}
+
+.icon-github::before { content: "\f09b"; }
+.icon-linkedin::before { content: "\f0e1"; }
+.icon-facebook::before { content: "\f39e"; }
+
+/* --- Responsive Layout --- */
+
+@media (max-width: 992px) {
+  section.hero {
+    /* Stacks the avatar and info section vertically */
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+  }
+
+  .avatar-section {
+    /* Centers the avatar when stacked */
+    width: 100%;
+    justify-content: center;
+  }
+ 
+  .info-section {
+    align-items: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.3rem;
+  }
+  .sub-title {
+    font-size: 0.95rem;
+    /* Ensure text is centered and contained */
+    padding: 0 1rem;
+  }
+  .all-icons {
+    font-size: 1.4rem;
+    gap: 1.5rem;
+  }
+}
