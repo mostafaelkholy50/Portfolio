@@ -14,6 +14,23 @@ import { FaGithub } from "react-icons/fa";
 // Helper to get project images - MOCK DATA
 const getProjectImages = (folderPath) => {
   const projectFiles = {
+    "images/ascend quran": [
+      "Main.png",
+      "Screenshot (166).png",
+      "Screenshot (167).png",
+      "Screenshot (168).png",
+      "Screenshot (169).png",
+      "Screenshot (170).png",
+      "Screenshot (171).png",
+      "Screenshot (172).png",
+      "Screenshot (173).png",
+      "Screenshot (174).png",
+      "Screenshot (175).png",
+      "Screenshot (176).png",
+      "Screenshot (177).png",
+      "Screenshot (178).png",
+      "Screenshot (179).png",
+    ],
     "images/ecommerce-app": [
       "home.png",
       "hero.png",
@@ -34,9 +51,9 @@ const getProjectImages = (folderPath) => {
       "Screenshot (154).png",
       "Screenshot (158).png",
       "dashboard.png",
-       "data.png", 
-       "details.png",
-      ],
+      "data.png",
+      "details.png",
+    ],
     "images/university": [
       "home.png",
       "courses.png",

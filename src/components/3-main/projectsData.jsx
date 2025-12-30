@@ -1,10 +1,43 @@
 export const allProjectsData = [
   {
+    // Unique ID used for URL navigation: /project/ascend-quran
+    id: "ascend-quran",
+    projectTitle: "AscendQuran Academy",
+    imgPath: "./images/ascend quran/Main.png",
+    detailImageFolder: "images/ascend quran",
+    category: ["Laravel", "MySQL", "Bootstrap"],
+
+    // --- Detail Page Data ---
+    type: "Quran Memorization Academy",
+    description: "A comprehensive platform for a Quran memorization academy with dashboards for students, teachers, parents, and admins.",
+    longDescription: "AscendQuran is a complete academy management system designed to facilitate Quran memorization. It features dedicated dashboards for all stakeholders: Admins manage general settings and users; Teachers track attendance and upload resources; Parents monitor their children's progress; and Students access learning materials and schedules. The system also handles financial aspects like teacher salaries and payment notifications.",
+    contributions: [
+      "Developed Admin dashboard for full system management",
+      "Implemented Teacher dashboard with salary calculation",
+      "Created Parent dashboard for student tracking",
+      "Built Student portal for resources and schedules",
+      "Implemented attendance and reporting system"
+    ],
+    technologies: [
+      "Laravel", "MySQL", "Bootstrap", "JavaScript",
+      "Blade Templates", "Authentication", "Role-Based Access"
+    ],
+    features: [
+      "Multi-role authentication (Admin, Teacher, Parent, Student)",
+      "Automated salary calculation",
+      "Attendance and absence tracking",
+      "Performance reporting system",
+      "Learning resource management",
+      "Detailed dashboards for all users"
+    ],
+    link: "https://ascendquran.com/"
+  },
+  {
     // Unique ID used for URL navigation: /project/replay-store
     id: "replay-store",
     projectTitle: "Replay Store E-commerce",
     imgPath: "./images/3.png",
-    detailImageFolder: "images/replay", 
+    detailImageFolder: "images/replay",
 
     // Filtering categories based on user request
     category: ["Laravel", "JavaScript", "MySQL"],
@@ -29,7 +62,7 @@ export const allProjectsData = [
       "Secure checkout process", "Order management system",
       "Admin panel for store management"
     ],
-    link: "https://github.com/MostafaElkholy4321/replay-store"
+    link: ""
   },
   {
     // Unique ID used for URL navigation: /project/medical-app
@@ -55,7 +88,7 @@ export const allProjectsData = [
       "Real-time chat", "Hospital directory", "Prescription management",
       "Payment processing", "Push notifications"
     ],
-     link: "https://github.com/mostafaelkholy50/Medical-App"
+    link: "https://github.com/mostafaelkholy50/Medical-App"
   },
   {
     // Unique ID used for URL navigation: /project/ecommerce-clothing
@@ -81,7 +114,7 @@ export const allProjectsData = [
       "Secure payment processing", "Product variants management",
       "Order history tracking", "API-first architecture"
     ],
-    link:"https://github.com/mostafaelkholy50/Ecommerce-App"
+    link: "https://github.com/mostafaelkholy50/Ecommerce-App"
   },
   {
     // Unique ID used for URL navigation: /project/university-website
@@ -108,7 +141,7 @@ export const allProjectsData = [
       "Student enrollment system", "Academic record management",
       "Timetable and scheduling", "Grade management system"
     ],
-    link:"https://github.com/mostafaelkholy50/university"
+    link: "https://github.com/mostafaelkholy50/university"
   }
 ];
 
