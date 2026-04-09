@@ -1,148 +1,389 @@
 export const allProjectsData = [
   {
-    // Unique ID used for URL navigation: /project/ascend-quran
     id: "ascend-quran",
-    projectTitle: "AscendQuran Academy",
-    imgPath: "./images/ascend quran/Main.png",
-    detailImageFolder: "images/ascend quran",
-    category: ["Laravel", "MySQL", "Bootstrap"],
-
-    // --- Detail Page Data ---
-    type: "Quran Memorization Academy",
-    description: "A comprehensive platform for a Quran memorization academy with dashboards for students, teachers, parents, and admins.",
-    longDescription: "AscendQuran is a complete academy management system designed to facilitate Quran memorization. It features dedicated dashboards for all stakeholders: Admins manage general settings and users; Teachers track attendance and upload resources; Parents monitor their children's progress; and Students access learning materials and schedules. The system also handles financial aspects like teacher salaries and payment notifications.",
+    projectTitle: "Ascend Quran Academy",
+    imgPath: "/images/Ascend Quran/Home.png",
+    detailImageFolder: "Ascend Quran",
+    category: ["Laravel", "MySQL", "Multi-Tenant"],
+    type: "Quran Memorization Platform",
+    description:
+      "A comprehensive online platform to manage Quran memorization sessions between teachers and students via Zoom, with multi-role access.",
+    longDescription:
+      "Ascend-Academy is a comprehensive online platform designed to manage and streamline Quran memorization sessions between teachers and students via Zoom. The system provides role-based access for Admins, Parents, Students, and Teachers, offering a centralized hub for scheduling, attendance tracking, performance reporting, resource sharing, and payment management.",
     contributions: [
-      "Developed Admin dashboard for full system management",
-      "Implemented Teacher dashboard with salary calculation",
-      "Created Parent dashboard for student tracking",
-      "Built Student portal for resources and schedules",
-      "Implemented attendance and reporting system"
+      "Developed Admin dashboard for full system management and salary tracking",
+      "Built Teacher dashboard with attendance and resource upload features",
+      "Created Parent dashboard for monitoring children's progress and payments",
+      "Implemented Student portal for schedules and educational resources",
+      "Set up Laravel Queue for automated daily email reminders",
     ],
     technologies: [
-      "Laravel", "MySQL", "Bootstrap", "JavaScript",
-      "Blade Templates", "Authentication", "Role-Based Access"
+      "Laravel 12", "PHP 8.2+", "MySQL", "Tailwind CSS",
+      "Alpine.js", "Vite", "Blade Templates", "Laravel Queue",
     ],
     features: [
       "Multi-role authentication (Admin, Teacher, Parent, Student)",
-      "Automated salary calculation",
-      "Attendance and absence tracking",
-      "Performance reporting system",
-      "Learning resource management",
-      "Detailed dashboards for all users"
+      "Automated salary calculation based on logged hours",
+      "Attendance and absence tracking with mandatory remarks",
+      "Comprehensive performance reporting system",
+      "Learning resource management (PDFs, Videos, Audio)",
+      "Zoom session scheduling and management",
+      "Automated email notifications via Laravel Queue",
     ],
-    link: "https://ascendquran.com/"
+    link: "https://ascendquran.com/",
   },
   {
-    // Unique ID used for URL navigation: /project/replay-store
-    id: "replay-store",
-    projectTitle: "Replay Store E-commerce",
-    imgPath: "./images/3.png",
-    detailImageFolder: "images/replay",
-
-    // Filtering categories based on user request
-    category: ["Laravel", "JavaScript", "MySQL"],
-
-    // --- Detail Page Data ---
-    type: "Freelance E-commerce Project",
-    description: "An online shoe store built with Bootstrap, JavaScript, and Laravel.",
-    longDescription: "Replay Store is my first freelance project, a fully functional e-commerce website for selling shoes online. I developed both the frontend (Bootstrap/JS) and backend (Laravel). The platform allows customers to browse products, add them to the cart, and place orders, while administrators can manage the store’s products and track customer orders.",
+    id: "washy",
+    projectTitle: "Washy – SaaS Business Platform",
+    imgPath: "/images/Washy/Home.png",
+    detailImageFolder: "Washy",
+    category: ["Laravel", "SaaS", "Multi-Tenant"],
+    type: "Multi-Tenant Business Management SaaS",
+    description:
+      "A professional Multi-Tenant SaaS system built with Laravel for businesses to manage customers, orders, payments, and their online presence.",
+    longDescription:
+      "Washy is a comprehensive, professional Multi-Tenant Business Management System (SaaS) built with Laravel. It provides businesses (Tenants) with a powerful dashboard to manage their customers, orders, payments, and online presence, while a SuperAdmin has full control over the entire platform, including tenant management, global settings, and a central CMS.",
     contributions: [
-      "Developed a responsive frontend using Bootstrap and JavaScript",
-      "Built the backend with Laravel to handle products and orders",
-      "Implemented shopping cart functionality",
-      "Designed the checkout process",
-      "Created admin dashboard for managing products and orders"
+      "Architected the entire multi-tenant system using stancl/tenancy",
+      "Built SuperAdmin dashboard with full tenant lifecycle management",
+      "Developed Tenant dashboard with CRM, orders, and payment tracking",
+      "Implemented custom Backup/Restore system in .washy format",
+      "Created bilingual (Arabic/English) dynamic landing pages",
     ],
     technologies: [
-      "Laravel 12", "Bootstrap", "JavaScript", "MySQL",
-      "Blade Templates", "Authentication", "Admin Dashboard"
+      "Laravel 12", "PHP 8.2+", "MySQL / SQLite",
+      "stancl/tenancy", "Tailwind CSS", "Vite", "Blade",
+      "mPDF", "Laravel Excel", "Spatie Translatable",
     ],
     features: [
-      "Product catalog with categories", "Shopping cart functionality",
-      "Secure checkout process", "Order management system",
-      "Admin panel for store management"
+      "Multi-tenancy with subdomain/domain isolation per business",
+      "SuperAdmin: Tenant management, global settings, central CMS",
+      "Tenant: Full order management and customer CRM",
+      "Digital PDF receipts and multi-currency support",
+      "Custom Backup & Restore system (.washy format)",
+      "Excel and PDF exports for all data",
+      "Full Arabic and English localization",
     ],
-    link: ""
+    link: "https://land.sitevip.org/",
   },
   {
-    // Unique ID used for URL navigation: /project/medical-app
+    id: "core-gym",
+    projectTitle: "Core – Gym Management SaaS",
+    imgPath: "/images/Core/Home.png",
+    detailImageFolder: "Core",
+    category: ["Laravel", "WebSocket", "SaaS"],
+    type: "Multi-Tenant Gym Management System",
+    description:
+      "A modern multi-tenant SaaS system for gym chains. Each gym branch gets an isolated database, subdomain, and real-time support chat.",
+    longDescription:
+      "Core is a modern, comprehensive Multi-Tenant management system specifically designed for gym chains and fitness centers. Built around a robust architecture using stancl/tenancy, it empowers a SuperAdmin to manage multiple independent gym branches from a central hub. Every newly registered gym gets its own completely isolated database and a dedicated subdomain, ensuring absolute data sovereignty and limitless scalability.",
+    contributions: [
+      "Designed and built the full multi-tenant architecture",
+      "Implemented real-time WebSocket chat using Laravel Reverb and Echo",
+      "Built Membership Plans, Coach Directory, and Client CRM modules",
+      "Developed Swift Attendance / Point of Sale interface",
+      "Created Tenant Profile & Settings management",
+    ],
+    technologies: [
+      "Laravel 12", "stancl/tenancy",
+      "Laravel Reverb (WebSockets)", "Laravel Echo",
+      "Tailwind CSS", "Blade", "Vite", "MySQL",
+    ],
+    features: [
+      "Database-per-tenant isolation with subdomain routing",
+      "Real-time WebSocket-powered support chat",
+      "Membership plan management (classes, sessions, duration)",
+      "Coach directory and client subscription CRM",
+      "Swift attendance / point-of-sale interface",
+      "Automatic tenant database provisioning and migration",
+      "SuperAdmin global support dashboard",
+    ],
+    link: "",
+  },
+  {
+    id: "atelier-jany",
+    projectTitle: "Atelier Jany – Workshop System",
+    imgPath: "/images/Jenan- Atelier/Home.png",
+    detailImageFolder: "Jenan- Atelier",
+    category: ["Laravel", "MySQL", "PHP"],
+    type: "Tailoring Workshop Management",
+    description:
+      "A professional management system for tailoring workshops, covering client onboarding, dynamic measurements, order tracking, and payments.",
+    longDescription:
+      "Atelier Jany is a professional, modern management system specifically designed for tailoring workshops and ateliers. It streamlines the entire workflow from client onboarding and dynamic measurement tracking to order management and payment processing, featuring a JSON-driven API for dynamic measurement forms.",
+    contributions: [
+      "Built the full order lifecycle from deposit to delivery",
+      "Developed a dynamic measurement system with JSON-driven API",
+      "Created Client CRM with detailed profiles and order history",
+      "Implemented Dashboard analytics for orders and revenue",
+      "Designed clean, intuitive Blade + Tailwind interface",
+    ],
+    technologies: [
+      "Laravel 12", "PHP 8.2+", "MySQL",
+      "Tailwind CSS", "Vite", "Blade Components",
+      "Laravel Breeze", "Internal JSON API",
+    ],
+    features: [
+      "Full order lifecycle tracking (Pending → In Progress → Completed)",
+      "Dynamic measurement system automatically loads per category",
+      "Client CRM with profiles and full order history",
+      "Design upload attachment to each order",
+      "Dashboard with active orders, revenue, and delivery tracking",
+      "One-command setup: composer run setup",
+    ],
+    link: "https://genan.ascend-quran-academy.com/dashboard",
+  },
+  {
+    id: "kivo-store",
+    projectTitle: "Kivo Store – Footwear E-Commerce",
+    imgPath: "/images/Kivo Store/Home.png",
+    detailImageFolder: "Kivo Store",
+    category: ["Laravel", "MySQL", "E-Commerce"],
+    type: "Premium Footwear E-commerce Platform",
+    description:
+      "A modern high-performance e-commerce platform for premium footwear with a full customer store and advanced admin dashboard built with Laravel 12.",
+    longDescription:
+      "Kivo Store (formerly Replay Store) is a modern, high-performance e-commerce platform dedicated to premium footwear. Built with Laravel 12, it provides a seamless shopping experience for customers and a powerful management dashboard for administrators. The store specializes in Sneakers, Classic Shoes, and Flats, with a special focus on Plus Sizes.",
+    contributions: [
+      "Developed full-featured customer-facing product catalog",
+      "Built comprehensive admin dashboard for product and order management",
+      "Implemented governorate-based shipping cost calculation",
+      "Created discount and reviews system with admin moderation",
+      "Designed responsive mobile-first UI with Tailwind CSS",
+    ],
+    technologies: [
+      "Laravel 12", "PHP 8.2+", "Tailwind CSS",
+      "Alpine.js", "Vite", "SQLite / MySQL",
+      "Laravel Breeze", "Blade Components",
+    ],
+    features: [
+      "Dynamic product catalog with categories and variants",
+      "Advanced filtering: Best Sellers, Plus Sizes, categories",
+      "Customer review system with moderation panel",
+      "One-page checkout with governorate-based shipping",
+      "Full admin: Products, Orders, Shipping, Discounts",
+      "Mobile-first fully responsive design",
+    ],
+    link: "https://kivo.ascend-quran-academy.com/",
+  },
+  {
     id: "medical-app",
     projectTitle: "Medical App Platform",
-    imgPath: "./images/2.png",
-    detailImageFolder: "images/medical",
-    category: ["Laravel", "MySQL", "PHP"],
-
-    // --- Detail Page Data ---
-    type: "Healthcare Platform",
-    description: "A comprehensive medical application that bridges the gap between patients and healthcare providers through digital solutions.",
-    longDescription: "This medical platform serves as a complete healthcare ecosystem, enabling patients to browse medications, book appointments, chat with doctors, and access hospital information all in one place. Key technologies include Laravel, MySQL, and real-time WebSocket integration.",
+    imgPath: "/images/Medical-App/Home.png",
+    detailImageFolder: "Medical-App",
+    category: ["Laravel", "WebSocket", "MySQL"],
+    type: "Healthcare Digital Platform",
+    description:
+      "A comprehensive healthcare ecosystem enabling patients to browse medications, book appointments, chat with doctors, and access hospital info.",
+    longDescription:
+      "This medical platform serves as a complete healthcare ecosystem, enabling patients to browse medications, book appointments, chat with doctors, and access hospital information all in one place. Key technologies include Laravel, MySQL, and real-time WebSocket integration for live doctor-patient communication. Payment processing is handled via Stripe and Fawry gateways.",
     contributions: [
-      "Built medication browsing system", "Developed order management",
-      "Implemented doctor appointment booking system",
-      "Created real-time chat functionality", "Integrated hospital information system",
-      "Implemented Stripe and Fawry payment gateways"
+      "Built medication browsing and order management system",
+      "Developed doctor appointment booking with calendar integration",
+      "Implemented real-time WebSocket chat between patients and doctors",
+      "Created hospital information directory",
+      "Integrated Stripe and Fawry payment gateways",
     ],
-    technologies: ["Laravel", "WebSocket", "Real-time Chat", "Stripe", "Fawry", "Notification System", "Calendar Integration", "PHP", "MySQL"],
+    technologies: [
+      "Laravel", "PHP", "MySQL", "WebSocket",
+      "Stripe", "Fawry", "Real-time Chat",
+      "Push Notifications", "Calendar Integration",
+    ],
     features: [
-      "Medication catalog with search functionality", "Doctor appointment booking",
-      "Real-time chat", "Hospital directory", "Prescription management",
-      "Payment processing", "Push notifications"
+      "Medication catalog with search and ordering",
+      "Doctor appointment booking system",
+      "Real-time patient-doctor chat (WebSocket)",
+      "Hospital and clinic directory",
+      "Prescription and medical record management",
+      "Dual payment gateway: Stripe and Fawry",
+      "Push notification system",
     ],
-    link: "https://github.com/mostafaelkholy50/Medical-App"
+    link: "https://github.com/mostafaelkholy50/Medical-App",
   },
   {
-    // Unique ID used for URL navigation: /project/ecommerce-clothing
     id: "ecommerce-clothing",
     projectTitle: "E-Commerce Backend API",
-    imgPath: "./images/1.png",
-    detailImageFolder: "images/ecommerce-app",
-    category: ["PHP", "Laravel", "MySQL"],
-
-    // --- Detail Page Data ---
+    imgPath: "/images/Ecommerce-App/Home.png",
+    detailImageFolder: "Ecommerce-App",
+    category: ["Laravel", "MySQL", "API"],
     type: "Clothing Store Backend",
-    description: "Backend infrastructure for a modern online clothing store with advanced categorization and user management features.",
-    longDescription: "This e-commerce backend provides the foundation for a clothing retail platform, focusing on scalable architecture and secure user management, built entirely using PHP (Laravel) and MySQL.",
+    description:
+      "A robust Laravel backend for a modern online clothing store with hierarchical categories, secure auth, and payment API integration.",
+    longDescription:
+      "This e-commerce backend provides the foundation for a clothing retail platform, focusing on scalable architecture and secure user management. It includes a full product management system with categories and variants, a secure authentication system, and payment API endpoints, built entirely using PHP/Laravel and MySQL.",
     contributions: [
-      "Designed and implemented product category system",
-      "Built comprehensive user authentication and authorization system",
+      "Designed and implemented hierarchical product category system",
+      "Built comprehensive user authentication and authorization",
       "Developed secure payment API endpoints",
-      "Created product management system with variants"
+      "Created product management system with variants and images",
+      "Implemented order history and tracking",
     ],
-    technologies: ["PHP", "Laravel", "MySQL", "API Development", "Authentication", "Payment APIs"],
+    technologies: [
+      "Laravel", "PHP", "MySQL",
+      "RESTful API", "Authentication",
+      "Payment APIs", "Blade Templates",
+    ],
     features: [
-      "Hierarchical product categories", "User authentication and profiles",
-      "Secure payment processing", "Product variants management",
-      "Order history tracking", "API-first architecture"
+      "Hierarchical product categories",
+      "User authentication and profile management",
+      "Secure payment API processing",
+      "Product variants management (size, color)",
+      "Order history and tracking",
+      "Admin dashboard for store management",
     ],
-    link: "https://github.com/mostafaelkholy50/Ecommerce-App"
+    link: "https://github.com/mostafaelkholy50/Ecommerce-App",
   },
   {
-    // Unique ID used for URL navigation: /project/university-website
     id: "university-website",
     projectTitle: "University Management System",
-    imgPath: "./images/4.png",
-    detailImageFolder: "images/university",
-    category: ["Laravel", "MySQL", "CSS"],
-
-    // --- Detail Page Data ---
+    imgPath: "/images/University/Home.png",
+    detailImageFolder: "University",
+    category: ["Laravel", "MySQL", "PHP"],
     type: "Educational Platform",
-    description: "A complete university management system designed to handle courses, professors, and student administration efficiently.",
-    longDescription: "This educational platform serves as a comprehensive solution for university administration, providing tools for course management, professor profiles, and student information systems, featuring custom frontend CSS and Laravel backend.",
+    description:
+      "A complete university management system handling courses, professors, student enrollment, grades, and academic scheduling.",
+    longDescription:
+      "This educational platform serves as a comprehensive solution for university administration, providing tools for course management, professor profiles, and student information systems. It features a custom CSS frontend and a robust Laravel backend with role-based access control for students, professors, and administrators.",
     contributions: [
-      "Developed course management system with enrollment capabilities",
-      "Built professor profile system",
-      "Created student management dashboard",
-      "Implemented course scheduling and timetable management",
-      "Built grade management system"
+      "Developed course management with enrollment capabilities",
+      "Built professor profile and assignment system",
+      "Created student management and grade tracking dashboard",
+      "Implemented timetable and scheduling management",
+      "Built role-based access for students, professors, and admins",
     ],
-    technologies: ["Laravel", "Database Design", "User Management", "Academic Systems", "Role-based Access Control", "CSS", "MySQL"],
+    technologies: [
+      "Laravel", "PHP", "MySQL", "CSS",
+      "Blade Templates", "Role-based Access Control",
+      "Database Design",
+    ],
     features: [
-      "Course catalog and management", "Professor profiles and assignments",
-      "Student enrollment system", "Academic record management",
-      "Timetable and scheduling", "Grade management system"
+      "Course catalog and enrollment system",
+      "Professor profiles and course assignments",
+      "Student academic record management",
+      "Timetable and scheduling system",
+      "Grade management and reporting",
+      "Multi-role dashboard (Student, Professor, Admin)",
     ],
-    link: "https://github.com/mostafaelkholy50/university"
-  }
+    link: "https://github.com/mostafaelkholy50/university",
+  },
 ];
 
-export const filterCategories = ["PHP", "Laravel", "MySQL"];
+/* Map folder names to their screenshot files */
+export const projectImages = {
+  "Ascend Quran": [
+    "Home.png",
+    "Screenshot (166).png",
+    "Screenshot (167).png",
+    "Screenshot (168).png",
+    "Screenshot (169).png",
+    "Screenshot (170).png",
+    "Screenshot (171).png",
+    "Screenshot (172).png",
+    "Screenshot (173).png",
+    "Screenshot (174).png",
+    "Screenshot (175).png",
+    "Screenshot (176).png",
+    "Screenshot (177).png",
+    "Screenshot (178).png",
+    "Screenshot (179).png",
+  ],
+  "Washy": [
+    "Home.png",
+    "Screenshot (226).png",
+    "Screenshot (227).png",
+    "Screenshot (228).png",
+    "Screenshot (230).png",
+    "Screenshot (231).png",
+    "Screenshot (232).png",
+    "Screenshot (233).png",
+    "Screenshot (234).png",
+    "Screenshot (235).png",
+    "Screenshot (236).png",
+    "Screenshot (237).png",
+    "Screenshot (238).png",
+  ],
+  "Core": [
+    "Home.png",
+    "Screenshot (221).png",
+    "Screenshot (222).png",
+    "Screenshot (223).png",
+    "Screenshot (224).png",
+    "Screenshot (225).png",
+  ],
+  "Jenan- Atelier": [
+    "Home.png",
+    "Screenshot (240).png",
+    "Screenshot (241).png",
+    "Screenshot (242).png",
+    "Screenshot (243).png",
+    "Screenshot (244).png",
+  ],
+  "Kivo Store": [
+    "Home.png",
+    "Screenshot (148).png",
+    "Screenshot (149).png",
+    "Screenshot (150).png",
+    "Screenshot (151).png",
+    "Screenshot (152).png",
+    "Screenshot (153).png",
+    "Screenshot (154).png",
+    "Screenshot (155).png",
+    "Screenshot (156).png",
+    "Screenshot (157).png",
+    "Screenshot (158).png",
+    "Screenshot (159).png",
+    "dashboard.png",
+    "data.png",
+    "details.png",
+  ],
+  "Medical-App": [
+    "Home.png",
+    "doctors.png",
+    "hospitals.png",
+    "details.png",
+    "Screenshot (57).png",
+    "Screenshot (58).png",
+    "Screenshot (59).png",
+    "Screenshot (60).png",
+    "Screenshot (61).png",
+    "Screenshot (62).png",
+    "Screenshot (63).png",
+    "Screenshot (64).png",
+    "Screenshot (65).png",
+    "Screenshot (66).png",
+    "Screenshot (67).png",
+    "Screenshot (68).png",
+    "Screenshot (69).png",
+    "Screenshot (70).png",
+    "Screenshot (71).png",
+    "Screenshot (73).png",
+    "Screenshot (74).png",
+  ],
+  "Ecommerce-App": [
+    "Home.png",
+    "hero.png",
+    "category.png",
+    "products.png",
+    "ProudactDetales.png",
+    "edit.png",
+    "Screenshot (80).png",
+    "Screenshot (83).png",
+    "Screenshot (84).png",
+    "Screenshot (86).png",
+    "Screenshot (90).png",
+  ],
+  "University": [
+    "Home.png",
+    "courses.png",
+    "dashboard.png",
+    "details.png",
+    "Screenshot (41).png",
+    "Screenshot (42).png",
+    "Screenshot (43).png",
+    "Screenshot (44).png",
+    "Screenshot (45).png",
+    "Screenshot (47).png",
+    "Screenshot (49).png",
+    "Screenshot (50).png",
+  ],
+};

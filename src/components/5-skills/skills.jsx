@@ -1,71 +1,111 @@
+import { useEffect, useRef } from "react";
+import { animate, inView, stagger } from "motion";
 import "./skills.css";
 
 const Skills = () => {
-    const skills = [
-        {
-            category: "Backend Development",
-            items: ["PHP", "Laravel 12", "OOP", "RESTful APIs"]
-        },
-        {
-            category: "Database & Storage",
-            items: ["MySQL", "Database Design", "Query Optimization"]
-        },
-        {
-            category: "Authentication & Security",
-            items: ["Laravel Sanctum", "Authentication", "Authorization"]
-        },
-        {
-            category: "Payment Integration",
-            items: ["Stripe", "Fawry", "Payment Processing"]
-        },
-        {
-            category: "Real-time Features",
-            items: ["WebSocket", "Live Updates", "Notifications"]
-        },
-        {
-            category: "Development Tools",
-            items: ["Git", "GitHub", "Team Collaboration"]
-        }
-    ];
-return (
-        <section className="skills-section">
-            <div className="skills-header">
-                <h2 className="skills-title">Technical Skills</h2>
-                <p className="skills-subtitle">
-                    Specialized in backend development with modern PHP frameworks and database systems
-                </p>
-            </div>
+  const sectionRef = useRef(null);
 
-            <div className="skills-grid">
-                {skills.map((skill, index) => (
-                    <div 
-                        key={index} 
-                        className="skill-card" 
-                        // FIX 1 & 2: Use template literals correctly with backticks
-                        aria-labelledby={`skill-category-${index}`}
-                    >
-                        <h3 
-                            id={`skill-category-${index}`} 
-                            className="skill-category"
-                        >
-                            {skill.category}
-                        </h3>
-                        <div className="skill-items">
-                            {skill.items.map((item, itemIndex) => (
-                                <span 
-                                    // FIX 3: Use a more unique key for stability
-                                    key={`${skill.category}-${itemIndex}`} 
-                                    className="skill-badge"
-                                >
-                                    {item}
-                                </span>
-                            ))}
-                        </div>
-                    </div>
-                ))}
+  const skills = [
+    {
+      category: "Backend Development",
+      icon: "⚙️",
+      color: "#7c3aed",
+      items: ["PHP 8.2+", "Laravel 12", "OOP", "RESTful APIs", "MVC Architecture"],
+    },
+    {
+      category: "Database & Storage",
+      icon: "🗄️",
+      color: "#06b6d4",
+      items: ["MySQL", "SQLite", "Database Design", "Query Optimization", "Eloquent ORM"],
+    },
+    {
+      category: "Authentication & Security",
+      icon: "🔐",
+      color: "#a855f7",
+      items: ["Laravel Sanctum", "Breeze", "OAuth", "Role-based Access", "Authorization"],
+    },
+    {
+      category: "Payment Integration",
+      icon: "💳",
+      color: "#22c55e",
+      items: ["Stripe", "Fawry", "Payment APIs", "Webhooks"],
+    },
+    {
+      category: "Real-time & SaaS",
+      icon: "⚡",
+      color: "#f59e0b",
+      items: ["WebSocket", "Laravel Reverb", "Echo", "Multi-tenancy", "stancl/tenancy"],
+    },
+    {
+      category: "Dev Tools & Workflow",
+      icon: "🛠️",
+      color: "#ef4444",
+      items: ["Git", "GitHub", "Vite", "Composer", "NPM", "Postman"],
+    },
+  ];
+
+  useEffect(() => {
+    if (!sectionRef.current) return;
+
+    return inView(sectionRef.current, () => {
+      const cards = sectionRef.current.querySelectorAll(".skill-card");
+      if (cards.length > 0) {
+        animate(
+          cards,
+          { opacity: [0, 1], y: [40, 0], scale: [0.95, 1] },
+          { duration: 0.6, delay: stagger(0.08), easing: [0.16, 1, 0.3, 1] }
+        );
+      }
+
+      const badges = sectionRef.current.querySelectorAll(".skill-badge");
+      if (badges.length > 0) {
+        animate(
+          badges,
+          { opacity: [0, 1], scale: [0.8, 1] },
+          { duration: 0.4, delay: stagger(0.03, { start: 0.4 }), easing: [0.34, 1.56, 0.64, 1] }
+        );
+      }
+    });
+  }, []);
+
+  return (
+    <section ref={sectionRef} className="skills-section">
+      <div className="section-heading">
+        <h2>Technical Skills</h2>
+        <p>Specialized in backend development with modern PHP frameworks and scalable architectures</p>
+      </div>
+
+      <div className="skills-grid">
+        {skills.map((skill, index) => (
+          <div
+            key={index}
+            className="skill-card"
+            style={{ "--card-color": skill.color }}
+            aria-labelledby={`skill-category-${index}`}
+          >
+            <div className="skill-card-header">
+              <span className="skill-icon" aria-hidden="true">{skill.icon}</span>
+              <h3 id={`skill-category-${index}`} className="skill-category">
+                {skill.category}
+              </h3>
             </div>
-        </section>
-    );
+            <div className="skill-items">
+              {skill.items.map((item, itemIndex) => (
+                <span
+                  key={`${skill.category}-${itemIndex}`}
+                  className="skill-badge"
+                  style={{ opacity: 0 }}
+                >
+                  {item}
+                </span>
+              ))}
+            </div>
+            <div className="skill-card-glow" aria-hidden="true" />
+          </div>
+        ))}
+      </div>
+    </section>
+  );
 };
 
-export default Skills
+export default Skills;

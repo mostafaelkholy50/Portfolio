@@ -1,91 +1,141 @@
-/* ========== Sticky Header ========== */
+/* ========== Sticky Glassmorphism Header ========== */
 header.flex.sticky-header {
   justify-content: space-between;
-  padding: 0.9rem 1.9rem;
+  align-items: center;
+  padding: 0.85rem 2rem;
   position: sticky;
   top: 0;
   z-index: 1000;
-  background-color: var(--bgHeader);
-  backdrop-filter: blur(12px);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  background: var(--bg-header);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  transition: all 0.3s ease;
 }
 
-/* Nav */
+header.flex.sticky-header.scrolled {
+  padding: 0.6rem 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px var(--border);
+}
+
+/* Logo / Brand */
+.header-logo {
+  font-size: 1.2rem;
+  font-weight: 800;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.03em;
+  font-family: "Inter", sans-serif;
+}
+
+/* Desktop Nav */
 header nav {
-  background-color: var(--bgHeader);
-  padding: 0.77rem 1.6rem;
-  border-radius: 55px;
-  box-shadow: 1px 1px 40px #2323242a;
+  background: rgba(124, 58, 237, 0.06);
+  border: 1px solid var(--border);
+  padding: 0.5rem 1.6rem;
+  border-radius: 100px;
+  backdrop-filter: blur(10px);
+  transition: var(--transition);
+}
+
+header nav:hover {
+  border-color: var(--border-hover);
+  background: rgba(124, 58, 237, 0.1);
 }
 
 header ul.flex {
-  gap: 16px;
+  gap: 0.25rem;
 }
 
 header ul li a {
-  color: var(--title);
-  opacity: 0.9;
-  font-size: 0.88rem;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
   font-weight: 500;
-  transition: all 0.2s ease;
+  padding: 0.4rem 0.9rem;
+  border-radius: 100px;
+  transition: all 0.25s ease;
+  letter-spacing: 0.01em;
 }
 
 header ul li a:hover {
-  color: var(--blue);
-  opacity: 1;
-  font-size: 0.9rem;
+  color: var(--text-primary);
+  background: rgba(124, 58, 237, 0.15);
 }
 
-/* Buttons & Icons */
+/* Icon Buttons (Menu + Theme) */
 header .icon-menu,
 header button.mode {
-  background-color: var(--bgHeader);
+  background: rgba(124, 58, 237, 0.08);
+  border: 1px solid var(--border);
   height: 2.4rem;
   width: 2.4rem;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--subtitle);
-  border: 1px solid rgba(244, 165, 96, 0.249);
+  color: var(--text-secondary);
   transition: all 0.3s ease;
-  box-shadow: 1px 1px 40px rgba(35, 35, 36, 0.165);
+  font-size: 1.1rem;
+}
+
+header .icon-menu:hover,
+header button.mode:hover {
+  background: var(--accent-glow);
+  border-color: var(--accent);
+  color: var(--accent-light);
+  box-shadow: 0 0 16px var(--accent-glow);
+  transform: scale(1.05);
 }
 
 header button.menu {
   display: none;
 }
 
-header .icon-close {
-  font-size: 1.5rem;
-  color: var(--subtitle);
-  transition: 0.4s;
+/* Theme icon */
+.icon-moon-o::before {
+  content: "🌙";
+  font-size: 0.9rem;
+}
+.icon-sun::before {
+  content: "☀️";
+  font-size: 0.9rem;
 }
 
-header .icon-close:hover {
-  color: crimson;
+/* Close icon in modal */
+header .icon-close,
+.icon-close {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+}
+header .icon-close:hover,
+.icon-close:hover {
+  color: #ef4444;
   transform: rotate(180deg);
 }
 
-/* ========== Modal ========== */
+/* ========== Mobile Modal (Full-screen) ========== */
 .fixed {
   position: fixed;
   inset: 0;
-  z-index: 999999 !important;
-  background-color: rgba(40, 40, 48, 0.95);
-  backdrop-filter: blur(8px);
+  z-index: 99999;
+  background: rgba(8, 8, 17, 0.95);
+  backdrop-filter: blur(16px);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .fixed ul.modal {
-  width: 75%;
-  max-width: 400px;
+  width: 80%;
+  max-width: 380px;
   padding: 2rem;
-  border-radius: 1rem;
-  background-color: var(--secondary);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  border-radius: var(--radius);
+  background: var(--bg-card);
+  border: 1px solid var(--border-hover);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.6), 0 0 0 1px var(--border);
   opacity: 0;
 }
 
@@ -98,14 +148,27 @@ header .icon-close:hover {
 .fixed ul.modal li:first-child {
   border: none;
   text-align: right;
+  padding-bottom: 0.5rem;
 }
 
-/* Responsive */
+.fixed ul.modal li a {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  font-weight: 500;
+  transition: all 0.25s ease;
+  display: block;
+  padding: 0.25rem 0;
+}
+
+.fixed ul.modal li a:hover {
+  color: var(--accent-light);
+}
+
+/* ========== Responsive ========== */
 @media screen and (max-width: 700px) {
   header nav {
     display: none;
   }
-
   header button.menu {
     display: flex !important;
   }

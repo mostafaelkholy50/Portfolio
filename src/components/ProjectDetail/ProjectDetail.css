@@ -1,0 +1,310 @@
+/* =============================================
+   PROJECT DETAIL PAGE
+============================================= */
+.project-detail-page {
+  padding: 2rem 0 6rem;
+  min-height: 100vh;
+}
+
+.detail-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.back-btn-wrapper {
+  margin-bottom: 2rem;
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(124, 58, 237, 0.1);
+  color: var(--accent-light);
+  border: 1px solid rgba(124, 58, 237, 0.2);
+  padding: 0.6rem 1.2rem;
+  border-radius: 100px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background: var(--accent);
+  color: white;
+  transform: translateX(-4px);
+}
+
+/* =============================================
+   AUTO SLIDER SECTION (TOP)
+============================================= */
+.auto-slider-container {
+  position: relative;
+  width: 100%;
+  /* No fixed height, let image dictate height */
+  height: auto;
+  background: transparent; /* Removed black background */
+  overflow: hidden;
+  margin-bottom: 4rem;
+  padding-bottom: 3rem; /* Space for dots */
+}
+
+.slider-track {
+  display: flex;
+  align-items: flex-start; /* align top instead of center */
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
+}
+
+.slider-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: transparent;
+}
+
+.slider-slide img {
+  width: 100%;
+  height: auto; /* natural height makes image very clear */
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Slider Controls */
+.slider-btn {
+  position: absolute;
+  top: calc(50% - 1.5rem);
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+
+.auto-slider-container:hover .slider-btn {
+  opacity: 1;
+}
+
+.slider-btn:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.prev-btn { left: 1rem; }
+.next-btn { right: 1rem; }
+
+/* Slider Dots */
+.slider-dots {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.5rem;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 0.4rem 0.8rem;
+  border-radius: 100px;
+  backdrop-filter: blur(4px);
+}
+
+.slider-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.slider-dot.active {
+  background: var(--accent);
+  transform: scale(1.4);
+  box-shadow: 0 0 10px var(--accent-glow);
+}
+
+/* =============================================
+   HEADER DETAILS
+============================================= */
+.detail-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.detail-type {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-light);
+  margin-bottom: 1rem;
+}
+
+.detail-title {
+  font-size: 3rem;
+  font-weight: 800;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.detail-description {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  line-height: 1.8;
+}
+
+.detail-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.8rem;
+  border-radius: 100px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  max-width: 100%;
+}
+
+.btn-github {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--text-primary);
+}
+
+.btn-github:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.btn-live {
+  background: var(--gradient-hero);
+  color: white;
+  box-shadow: 0 4px 15px var(--accent-glow);
+}
+
+.btn-live:hover {
+  box-shadow: 0 6px 20px rgba(124, 58, 237, 0.5);
+  transform: translateY(-2px);
+}
+
+/* =============================================
+   INFO GRID
+============================================= */
+.detail-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.info-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem;
+}
+
+.info-box h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1.2rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.8rem;
+}
+
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.info-box ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.info-box li {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  position: relative;
+  padding-left: 1.2rem;
+}
+
+.info-box li::before {
+  content: "✦";
+  position: absolute;
+  left: 0;
+  color: var(--accent-light);
+  font-size: 0.8rem;
+  top: 0.2rem;
+}
+
+/* =============================================
+   RESPONSIVE
+============================================= */
+@media (max-width: 768px) {
+  .detail-title {
+    font-size: 2.2rem;
+  }
+  
+  .detail-info-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .btn {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+  
+  .detail-links {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+
+  .slider-btn {
+    opacity: 1; /* Always show buttons on mobile since hover is tricky */
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .detail-container {
+    padding: 0 1rem;
+  }
+}
