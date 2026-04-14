@@ -119,7 +119,7 @@ const Hero = () => {
 
         {/* Description */}
         <p className="hero-description" style={{ opacity: 0 }}>
-          21-year-old Computer Science graduate specializing in robust
+          23-year-old Computer Science graduate specializing in robust
           backend development using <strong>Laravel</strong>. I build highly efficient,
           scalable systems — from secure APIs and multi-tenant SaaS platforms
           to real-time features and seamless payment integrations.
@@ -168,7 +168,7 @@ const Hero = () => {
           </div>
           <div className="hero-stat-divider" />
           <div className="hero-stat" style={{ opacity: 0 }}>
-            <span className="hero-stat-number">3+</span>
+            <span className="hero-stat-number">2+</span>
             <span className="hero-stat-label">Years Coding</span>
           </div>
           <div className="hero-stat-divider" />
