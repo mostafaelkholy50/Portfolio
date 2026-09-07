@@ -2,8 +2,8 @@ export const allProjectsData = [
   {
     id: "ascend-quran",
     projectTitle: "Ascend Quran Academy",
-    imgPath: "/images/Ascend Quran/Home.png",
-    detailImageFolder: "Ascend Quran",
+    imgPath: "/images/ascend quran/Home.png",
+    detailImageFolder: "ascend quran",
     category: ["Laravel", "MySQL", "Multi-Tenant"],
     type: "Quran Memorization Platform",
     description:
@@ -203,8 +203,8 @@ export const allProjectsData = [
   {
     id: "ecommerce-clothing",
     projectTitle: "E-Commerce Backend API",
-    imgPath: "/images/Ecommerce-App/Home.png",
-    detailImageFolder: "Ecommerce-App",
+    imgPath: "/images/ecommerce-app/home.png",
+    detailImageFolder: "ecommerce-app",
     category: ["Laravel", "MySQL", "API"],
     type: "Clothing Store Backend",
     description:
@@ -236,8 +236,8 @@ export const allProjectsData = [
   {
     id: "university-website",
     projectTitle: "University Management System",
-    imgPath: "/images/University/Home.png",
-    detailImageFolder: "University",
+    imgPath: "/images/university/home.png",
+    detailImageFolder: "university",
     category: ["Laravel", "MySQL", "PHP"],
     type: "Educational Platform",
     description:
@@ -270,7 +270,7 @@ export const allProjectsData = [
 
 /* Map folder names to their screenshot files */
 export const projectImages = {
-  "Ascend Quran": [
+  "ascend quran": [
     "Home.png",
     "Screenshot (166).png",
     "Screenshot (167).png",
@@ -359,8 +359,8 @@ export const projectImages = {
     "Screenshot (73).png",
     "Screenshot (74).png",
   ],
-  "Ecommerce-App": [
-    "Home.png",
+  "ecommerce-app": [
+    "home.png",
     "hero.png",
     "category.png",
     "products.png",
@@ -372,8 +372,8 @@ export const projectImages = {
     "Screenshot (86).png",
     "Screenshot (90).png",
   ],
-  "University": [
-    "Home.png",
+  "university": [
+    "home.png",
     "courses.png",
     "dashboard.png",
     "details.png",
