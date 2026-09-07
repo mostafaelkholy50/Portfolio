@@ -29,8 +29,8 @@ const Contact = () => {
       // 🚨 تم التعديل
       icon: faWhatsapp,
       title: "Phone / WhatsApp",
-      details: "+20 114 801 6161",
-      link: "https://wa.me/201148016161",
+      details: "+20 155 065 0143",
+      link: "https://wa.me/201550650143",
       target: "_blank",
       description: "The fastest way to reach me for quick discussions.",
     },

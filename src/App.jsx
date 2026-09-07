@@ -6,6 +6,7 @@ import Hero from "./components/2-hero/Hero";
 import Main from "./components/3-main/Main";
 import Skills from "./components/5-skills/skills";
 import Contact from "./components/4-contact/Contact";
+import Experience from "./components/6-experience/Experience";
 import ProjectDetail from "./components/ProjectDetail/ProjectDetail";
 
 function App() {
@@ -58,6 +59,10 @@ function App() {
           <section id="skills" aria-label="Skills">
             <Skills />
           </section>
+
+          <div className="divider" role="separator" />
+
+          <Experience />
 
           <div className="divider" role="separator" />
 

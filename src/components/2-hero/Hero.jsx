@@ -3,11 +3,10 @@ import { animate, inView, stagger } from "motion";
 import "./hero.css";
 
 const roles = [
-  "Laravel Backend Developer",
-  "PHP Expert",
+  "Junior Backend Developer",
+  "PHP | Laravel | MySQL",
   "API Architect",
   "Multi-Tenant SaaS Builder",
-  "Full Stack Developer",
 ];
 
 const Hero = () => {
@@ -21,7 +20,7 @@ const Hero = () => {
     github: "https://github.com/mostafaelkholy50",
     linkedin: "https://www.linkedin.com/in/mostafa-elkholy-4333b3262/",
     facebook: "https://www.facebook.com/mostafaelkhol/",
-    whatsapp: "https://wa.me/201148016161",
+    whatsapp: "https://wa.me/201550650143",
   };
 
   // Typing effect
@@ -119,10 +118,7 @@ const Hero = () => {
 
         {/* Description */}
         <p className="hero-description" style={{ opacity: 0 }}>
-          23-year-old Computer Science graduate specializing in robust
-          backend development using <strong>Laravel</strong>. I build highly efficient,
-          scalable systems — from secure APIs and multi-tenant SaaS platforms
-          to real-time features and seamless payment integrations.
+          Backend Developer with hands-on experience delivering production <strong>Laravel</strong> platforms across legal-tech, consulting, e-commerce, education, and SaaS domains. Skilled in RESTful API design, RBAC and multi-tenant architecture, MySQL optimization, and secure, clean MVC code.
         </p>
 
         {/* CTA Buttons */}
